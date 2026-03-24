@@ -83,7 +83,8 @@ def call(Map config = [:]) {
                 steps {
                     dir('app') {
                         sh "git tag v${env.NEW_VERSION}"
-                        sh "git push origin HEAD:${env.BRANCH_NAME} --tags"
+                        // sh "git push origin HEAD:${env.BRANCH_NAME} --tags"
+                        sh "git push origin HEAD:main --tags"
                     }
                 }
             }
