@@ -25,9 +25,16 @@ def call(Map config = [:]) {
         stages {
             // 1. Checkout happens automatically in Declarative Pipelines if configured from SCM, 
             // but we can leave it if you are running this locally.
+            // stage('Checkout') {
+            //     steps {
+            //         checkout scm
+            //     }
+            // }
+
             stage('Checkout') {
                 steps {
-                    checkout scm
+                    // Use the exact URL, just like in your original script
+                    git branch: 'main', url: config.gitUrl
                 }
             }
 
