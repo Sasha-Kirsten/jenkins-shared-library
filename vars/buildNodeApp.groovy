@@ -3,7 +3,8 @@ def call(Map config = [:]) {
     
     // Set default values just in case the user forgets to provide them
     def dockerRepo = config.dockerRepo ?: 'unknown/app'
-    def dockerCreds = config.dockerCredentialsId ?: 'docker-hub-creds'
+    // def dockerCreds = config.dockerCredentialsId ?: 'docker-hub-creds'
+    def dockerCreds = config.dockerCredentialsId ?: 'a1c05e8e-d7b0-4e60-a76d-da3161734fff'
     
     pipeline {
         agent any
